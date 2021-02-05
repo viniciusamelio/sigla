@@ -14,7 +14,9 @@ export default function Home() {
   return (
     <div className="p-0 m-0 is-12">
       <Head>
-        <title>Sigla - Festa Cristã</title>
+        <title>Sigla - A Festa Cristã</title>
+        <meta name="keywords" content="Sigla, Evento, Cristão, Festa Cristã, Feira Cristã, Deus, Jesus, Amor, Louvor"></meta>
+        <meta name="description" content="O evento cristão moderno"></meta>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
@@ -41,13 +43,13 @@ export default function Home() {
             }} text="Saber mais" />
           </div>
           <div className="column is-12 is-flex is-align-items-center is-justify-content-center">
-            <a href="">
+            <a href="https://facebook.com" rel="noopener">
               <ImFacebook2 className="is-size-3 is-size-3-mobile has-text-purple is-clickable" />
             </a>
-            <a target="__blank" href="https://www.instagram.com/siglaevento/">
+            <a target="__blank" rel="noopener" href="https://www.instagram.com/siglaevento/">
               <ImInstagram className="is-size-3 is-size-3-mobile mx-3 has-text-purple is-clickable" />
             </a>
-            <a target="_blank" href="https://www.youtube.com/channel/UCg07O74cAtGAs08hL6_yL2w">
+            <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCg07O74cAtGAs08hL6_yL2w">
               <ImYoutube className="is-size-2 is-size-2-mobile has-text-purple is-clickable" />
             </a>
           </div>
@@ -130,7 +132,7 @@ export default function Home() {
             </p>
           </div>
           <div className="column my-3 is-12 has-text-centered">
-            <a target='__blank' href="https://www.instagram.com/siglaevento/" style={{ textDecoration: 'underline' }} className="has-text-purple is-flex is-justify-content-center has-text-weight-bold is-align-items-center">
+            <a target='__blank' rel="noopener" href="https://www.instagram.com/siglaevento/" style={{ textDecoration: 'underline' }} className="has-text-purple is-flex is-justify-content-center has-text-weight-bold is-align-items-center">
               <ImInstagram className="is-size-4 is-size-5-mobile mx-3 is-clickable" />
               <p className="is-size-5">
                 Mais informações
@@ -189,11 +191,11 @@ export default function Home() {
             Como quer falar conosco?
           </h3>
           <div className="column is-12 has-text-centered is-flex is-align-items is-justify-content-center">
-            <a href="mailto:siglaam@gmail.com" >
+            <a rel="noopener" href="mailto:siglaam@gmail.com" >
               <ImMail className="is-size-2 has-text-purple is-clickable" />
             </a>
 
-            <a target="__blank" href="https://api.whatsapp.com/send?phone=553584788656&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20evento%20Sigla">
+            <a rel="noopener" target="__blank" href="https://api.whatsapp.com/send?phone=553584788656&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20evento%20Sigla">
               <ImWhatsapp className="is-size-2 ml-4 has-text-green is-clickable" />
             </a>
           </div>
@@ -212,13 +214,13 @@ export default function Home() {
 
       <footer className="is-12 column" style={{backgroundColor: '#1A072B'}}>
         <div className="column is-12 is-flex is-align-items-center is-justify-content-center">
-          <a href="">
+          <a href="https://facebook.com" rel="noopener">
             <ImFacebook2 className="is-size-3 is-size-3-mobile has-text-green is-clickable" />
           </a>
-          <a target="__blank" href="https://www.instagram.com/siglaevento/">
+          <a target="__blank" rel="noopener" href="https://www.instagram.com/siglaevento/">
             <ImInstagram className="is-size-3 is-size-3-mobile mx-3 has-text-green is-clickable" />
           </a>
-          <a target="_blank" href="https://www.youtube.com/channel/UCg07O74cAtGAs08hL6_yL2w">
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/channel/UCg07O74cAtGAs08hL6_yL2w">
             <ImYoutube className="is-size-2 is-size-2-mobile has-text-green is-clickable" />
           </a>
         </div>
