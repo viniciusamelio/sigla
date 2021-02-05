@@ -53,6 +53,10 @@ body {
   color: $purple;
 }
 
+.has-text-dark-purple{
+  color: #4E299A;
+}
+
 .has-text-grey{
   color: $grey !important;
 }
@@ -65,4 +69,10 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+button:focus{
+  outline: none;
+  border :none;
 }
