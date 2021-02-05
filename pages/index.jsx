@@ -17,7 +17,7 @@ export default function Home() {
         <title>Sigla - A Festa Cristã</title>
         <meta name="keywords" content="Sigla, Evento, Cristão, Festa Cristã, Feira Cristã, Deus, Jesus, Amor, Louvor"></meta>
         <meta name="description" content="O evento cristão moderno"></meta>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
       </Head>
       <Navbar />
       <section id="home" className="mt-6" style={{
