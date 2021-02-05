@@ -161,13 +161,13 @@ export default function Home() {
               }
             ]} hasArrows={false} draggable={true} >
               <div className="column p-4 ">
-                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: '#12022E' }}>
-                  <Image src="/images/logo-am.png" height="300px" width="300px" />
+                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
+                  <Image src="/images/patrocinadores/300.jpeg" height="300px" width="300px" />
                 </div>
               </div>
               <div className="column p-4 ">
-                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: '#12022E' }}>
-                  <Image src="/images/logo-am.png" height="300px" width="300px" />
+                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
+                  <Image src="/images/patrocinadores/fernanda-motta.jpeg" height="250px" width="300px" />
                 </div>
               </div>
             </Glider>
