@@ -22,7 +22,7 @@ export default function Home() {
         width: '100vw',
         minHeight: '60vh',
         backgroundColor: '#12022E',
-        backgroundImage: "url('./images/bg.png')",
+        backgroundImage: "url('./images/bg.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}>
