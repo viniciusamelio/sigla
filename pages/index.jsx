@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useEffect, useRef,useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Button from '../components/button';
 import { ImFacebook2, ImInstagram, ImYoutube, ImWhatsapp, ImMail } from 'react-icons/im';
 import Navbar from '../components/navbar';
@@ -10,16 +10,49 @@ import Glider from 'react-glider';
 
 
 export default function Home() {
-  const year = new Date().getFullYear();  
-  const [showGlider,setShowGlider] = useState(false);
-  const productsRef = useRef();  
+  const year = new Date().getFullYear();
+  const [showGlider, setShowGlider] = useState(false);
+  const productsRef = useRef();
   const sponsorsRef = useRef();
-  useEffect(()=>{
+
+  useEffect(() => {
     setShowGlider(true);
   });
 
-  const productsGlider=()=>{
-    if(showGlider){
+  useEffect(() => {
+    if (showGlider) {
+      sliderAuto(sponsorsRef.current,2000);
+      sliderAuto(productsRef.current,2000);
+    }
+  })
+
+  const sliderAuto = (slider, miliseconds) => {
+    const slidesCount = slider.track.childElementCount;
+    let slideTimeout = null;
+    let nextIndex = 1;
+
+    function slide() {
+      slideTimeout = setTimeout(
+        function () {
+          if (nextIndex >= slidesCount) {
+            nextIndex = 0;
+          }
+          slider.scrollItem(nextIndex++);
+        },
+        miliseconds
+      );
+    }
+
+    slider.ele.addEventListener('glider-animated', function () {
+      window.clearInterval(slideTimeout);
+      slide();
+    });
+
+    slide();
+  }
+
+  const productsGlider = () => {
+    if (showGlider) {
       return <Glider scrollLock={true} responsive={[
         {
           breakpoint: 1024,
@@ -45,8 +78,8 @@ export default function Home() {
     }
   }
 
-  const sponsorsGlider=()=>{
-    if(showGlider){
+  const sponsorsGlider = () => {
+    if (showGlider) {
       return <Glider scrollLock={true} ref={sponsorsRef} responsive={[
         {
           breakpoint: 1024,
@@ -231,7 +264,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="is-12 column" style={{backgroundColor: '#1A072B'}}>
+      <footer className="is-12 column" style={{ backgroundColor: '#1A072B' }}>
         <div className="column is-12 is-flex is-align-items-center is-justify-content-center">
           <a href="https://facebook.com" rel="noopener">
             <ImFacebook2 className="is-size-3 is-size-3-mobile has-text-green is-clickable" />
@@ -244,7 +277,7 @@ export default function Home() {
           </a>
         </div>
         <div className="column is-12 has-text-centered">
-            <Image src="/images/logo.png" alt="Logo Sigla" height="80px" width="300px" />
+          <Image src="/images/logo.png" alt="Logo Sigla" height="80px" width="300px" />
         </div>
         <div className="column is-12 has-text-centered">
           <p className="has-text-weight has-text-white is-size-5 is-size-6-mobile">
