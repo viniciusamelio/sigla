@@ -191,7 +191,7 @@ export default function Home() {
 
       </section>
 
-      <section id="agenda" className="column is-12 px-3 py-6" style={{ backgroundColor: '#12022E' }}>
+      {/* <section id="agenda" className="column is-12 px-3 py-6" style={{ backgroundColor: '#12022E' }}>
         <div className="column is-6-desktop is-offset-3-desktop ">
           <h2 className="is-size-3 is-size-4-mobile has-text-green has-text-weight-bold">
             Agenda
@@ -213,7 +213,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section id="patrocinadores" className="column is-12 px-3 py-6">
         <div className="column is-6-desktop is-offset-3-desktop ">
