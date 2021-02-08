@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef,useState } from 'react';
 import Button from '../components/button';
 import { ImFacebook2, ImInstagram, ImYoutube, ImWhatsapp, ImMail } from 'react-icons/im';
 import Navbar from '../components/navbar';
@@ -10,7 +10,68 @@ import Glider from 'react-glider';
 
 
 export default function Home() {
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear();  
+  const [showGlider,setShowGlider] = useState(false);
+  const productsRef = useRef();  
+  const sponsorsRef = useRef();
+  useEffect(()=>{
+    setShowGlider(true);
+  });
+
+  const productsGlider=()=>{
+    if(showGlider){
+      return <Glider scrollLock={true} responsive={[
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 'auto',
+            itemWidth: 150,
+            duration: 0.25
+          }
+        }
+      ]} hasArrows={true} ref={productsRef} draggable={true}>
+        <div className="column p-4 ">
+          <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
+            <Image src="/images/mockup-camiseta.png" height="300px" width="300px" />
+          </div>
+        </div>
+        <div className="column p-4 ">
+          <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
+            <Image src="/images/mockup-camiseta.png" height="300px" width="300px" />
+          </div>
+        </div>
+      </Glider>
+    }
+  }
+
+  const sponsorsGlider=()=>{
+    if(showGlider){
+      return <Glider scrollLock={true} ref={sponsorsRef} responsive={[
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 'auto',
+            itemWidth: 150,
+            duration: 0.25
+          }
+        }
+      ]} hasArrows={false} draggable={true} >
+        <div className="column p-4 ">
+          <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
+            <Image src="/images/patrocinadores/300.jpeg" height="300px" width="300px" />
+          </div>
+        </div>
+        <div className="column p-4 ">
+          <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
+            <Image src="/images/patrocinadores/fernanda-motta.jpeg" height="250px" width="300px" />
+          </div>
+        </div>
+      </Glider>
+    }
+  }
+
   return (
     <div className="p-0 m-0 is-12">
       <Head>
@@ -86,28 +147,7 @@ export default function Home() {
             Espalhe o amor com nossa linha
           </h3>
           <div className="column is-12">
-            <Glider scrollLock={true} responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 'auto',
-                  itemWidth: 150,
-                  duration: 0.25
-                }
-              }
-            ]} hasArrows={true} draggable={true}>
-              <div className="column p-4 ">
-                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
-                  <Image src="/images/mockup-camiseta.png" height="300px" width="300px" />
-                </div>
-              </div>
-              <div className="column p-4 ">
-                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
-                  <Image src="/images/mockup-camiseta.png" height="300px" width="300px" />
-                </div>
-              </div>
-            </Glider>
+            {productsGlider()}
           </div>
           <div className="column my-4 is-12 has-text-centered">
             <Button onClick={() => {
@@ -151,28 +191,7 @@ export default function Home() {
             Junte-se a nós no link abaixo
           </h3>
           <div className="column is-12">
-            <Glider scrollLock={true} responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 'auto',
-                  itemWidth: 150,
-                  duration: 0.25
-                }
-              }
-            ]} hasArrows={false} draggable={true} >
-              <div className="column p-4 ">
-                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
-                  <Image src="/images/patrocinadores/300.jpeg" height="300px" width="300px" />
-                </div>
-              </div>
-              <div className="column p-4 ">
-                <div className="is-align-items-center is-justify-content-center is-flex " style={{ borderRadius: '20px', backgroundColor: 'white' }}>
-                  <Image src="/images/patrocinadores/fernanda-motta.jpeg" height="250px" width="300px" />
-                </div>
-              </div>
-            </Glider>
+            {sponsorsGlider()}
           </div>
           <div className="column my-4 is-12 has-text-centered">
             <Button onClick={() => {
